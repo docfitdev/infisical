@@ -25,6 +25,10 @@ The supported project types are:
 - [Key Management Service (KMS)](/documentation/platform/kms/overview): Encrypt and decrypt data using centrally managed keys with enforced access policies and full audit visibility.
 - [Secret Scanning](/documentation/platform/secret-scanning/overview): Detect hardcoded secrets in code, CI pipelines, and infrastructure—integrated with GitHub, GitLab, Bitbucket, and more.
 
+<Note>
+  You can't create [PAM](/documentation/platform/pam/overview) projects directly. Infisical creates one for your organization automatically, and a request to create one directly fails with a `Bad Request` error stating that the project can't be created directly because one is created for your organization automatically. The same applies to [Agent Vault](/documentation/platform/agent-vault/overview) projects.
+</Note>
+
 ## Roles and access control
 
 [Users](/documentation/platform/identities/user-identities) and [machine identities](/documentation/platform/identities/machine-identities) must be added to a project to access its resources. Each identity is assigned a [project-level role](/documentation/platform/access-controls/role-based-access-controls#project-level-access-controls) that defines what they can manage—such as secrets, certificates, or PAM access. These roles apply to both individuals and [user groups](/documentation/platform/groups), enabling scalable access across teams and environments.
